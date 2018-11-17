@@ -1,0 +1,36 @@
+﻿<Window x:Class="HW11.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW11.WPF"
+        xmlns:sharedvm="clr-namespace:HW11.Shared.ViewModel;assembly=HW11.Shared"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <sharedvm:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="1*" />
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />s
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
+        <TextBlock>Enter your First Lame:</TextBlock>
+        <TextBox MinWidth="100" Grid.Column="1" Text="{Binding FirstName}"/>
+        <TextBlock Grid.Row="1">Enter your Last Name</TextBlock>
+        <TextBox MinWidth="100" Grid.Row="1" Grid.Column="1" Text="{Binding LastName}"/>
+        <TextBlock Grid.Row="2">Enter your Age:</TextBlock>
+        <TextBox MinWidth="100" Grid.Column="1" Grid.Row="2" Text="{Binding Age}"/>
+        <Button Grid.Row="3" Content="Press to Enter Person" Command="{Binding AddPerson}"/>
+    </Grid>
+</Window>

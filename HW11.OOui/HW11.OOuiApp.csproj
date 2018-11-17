@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="OOuiView.xaml" />
+  </ItemGroup>
+
+  <!--<ItemGroup>
+    <EmbeddedResource Include="OOuiView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>-->
+
+  <ItemGroup>
+    <PackageReference Include="Ooui.Forms" Version="0.10.222" />
+    <PackageReference Include="Ooui.Wasm" Version="0.10.222" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.1.527436" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="OOuiView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

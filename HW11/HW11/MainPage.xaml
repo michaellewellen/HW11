@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HW11"
+             x:Class="HW11.MainPage">
+
+    <StackLayout HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+        <!-- Place new controls here -->
+        <Label Text="Add a new person" 
+               FontAttributes="Bold"
+               FontSize="Large"/>
+        <Label Text="First Name:"/>
+        <Entry Text="{Binding FirstName}"/>
+        <Label Text="Last Name:"/>
+        <Entry Text="{Binding LastName}"/>
+        <Label Text="Age"/>
+        <Entry Text="{Binding Age}"/>
+        <Button Command="{Binding AddPersonCommand}"
+                Text="Add to Database"/>
+
+        <ListView ItemsSource="{Binding People}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding FirstName}"
+                              Detail="{Binding Age}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
